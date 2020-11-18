@@ -4,7 +4,8 @@
   "description": "Helper methods for importing files to Inkdrop",
   "main": "index.js",
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "prepublishOnly": "npm test"
   },
   "keywords": [
     "Inkdrop"
