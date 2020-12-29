@@ -1,6 +1,6 @@
 {
   "name": "inkdrop-import-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Helper methods for importing files to Inkdrop",
   "main": "index.js",
   "scripts": {
