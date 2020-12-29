@@ -4,7 +4,7 @@ import fs from 'fs'
 import * as utils from './index'
 
 test('extract images', async (t) => {
-  const fn = path.resolve(__dirname, 'fixtures', 'test.md')
+  const fn = path.resolve(__dirname, 'fixtures', 'test-yamlfrontmatter.md')
   const md = fs.readFileSync(fn, 'utf-8')
   const images = utils.extractImages(md)
   t.is(images instanceof Array, true)
@@ -17,11 +17,20 @@ test('extract images', async (t) => {
   t.is(images[1].url, './images/bar.jpg')
 })
 
-test('extract title and body from file', (t) => {
-  const fn = path.resolve(__dirname, 'fixtures', 'test.md')
+test('extract title and body with frontmatter from file', (t) => {
+  const fn = path.resolve(__dirname, 'fixtures', 'test-yamlfrontmatter.md')
   const md = fs.readFileSync(fn, 'utf-8')
   const meta = utils.getTitleAndBodyFromMarkdown(fn, md)
   t.is(typeof meta, 'object')
   t.is(meta.title, 'This is a Markdown note')
+  t.is(typeof meta.body, 'string')
+})
+
+test('extract title and body without frontmatter from file', (t) => {
+  const fn = path.resolve(__dirname, 'fixtures', 'test.md')
+  const md = fs.readFileSync(fn, 'utf-8')
+  const meta = utils.getTitleAndBodyFromMarkdown(fn, md)
+  t.is(typeof meta, 'object')
+  t.is(meta.title, 'Write your first JavaScript program!')
   t.is(typeof meta.body, 'string')
 })

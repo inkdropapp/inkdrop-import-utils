@@ -1,6 +1,3 @@
----
-title: This is a Markdown note
----
+# Write your first JavaScript program!
 
-![alt](./images/foo.png)
-![alt2](./images/bar.jpg)
+github.com/ryanpcmcquen

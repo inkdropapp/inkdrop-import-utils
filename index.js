@@ -1,3 +1,4 @@
+const Cutter = require('utf8-binary-cutter')
 const fs = require('fs')
 const path = require('path')
 const extractImages = require('./remark-extract-images')
