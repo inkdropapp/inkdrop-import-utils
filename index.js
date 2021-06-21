@@ -33,7 +33,7 @@ function getTitleAndBodyFromMarkdown(fn, md) {
       }
       continue
     }
-    if (yamlBlockStart < 0 && line.match(/^#+/)) {
+    if (yamlBlockStart < 0 && line.match(/^#+\s/)) {
       title = Cutter.truncateToBinarySize(line.replace(/^#+\s*/, ''), 128)
       lines.splice(i, 1)
       break
