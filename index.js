@@ -1,4 +1,4 @@
-const Cutter = require('utf8-binary-cutter')
+const truncateToBinarySize = require('./truncate-to-binary-size')
 const fs = require('fs')
 const path = require('path')
 const extractImages = require('./remark-extract-images')
@@ -34,7 +34,7 @@ function getTitleAndBodyFromMarkdown(fn, md) {
       continue
     }
     if (yamlBlockStart < 0 && line.match(/^#+\s/)) {
-      title = Cutter.truncateToBinarySize(line.replace(/^#+\s*/, ''), 128)
+      title = truncateToBinarySize(line.replace(/^#+\s*/, ''), 128)
       lines.splice(i, 1)
       break
     }
