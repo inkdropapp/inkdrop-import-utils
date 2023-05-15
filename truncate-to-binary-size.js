@@ -1,3 +1,9 @@
+const DEFAULT_TRUNCATE_STRING = '...'
+const DEFAULT_TRUNCATE_STRING_BINARY_SIZE = Buffer.byteLength(
+  DEFAULT_TRUNCATE_STRING,
+  'utf8'
+)
+
 /* Return size, in bytes, of the given UTF-8 string.
  * @param [String] string
  * @return [Number] size of the string in bytes
